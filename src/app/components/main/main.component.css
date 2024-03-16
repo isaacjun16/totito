@@ -1,0 +1,21 @@
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.casilla {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+}
+
+#reiniciar {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid black;
+  cursor: pointer;
+}

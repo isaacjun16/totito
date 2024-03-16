@@ -1,0 +1,5 @@
+<h1>Juego de Totito</h1>
+<div id="tablero">
+    <div class="casilla" *ngFor="let casilla of tablero; let i = index" (click)="marcar(i)">{{casilla}}</div>
+</div>
+<button id="reiniciar" (click)="reiniciar()">Reiniciar</button>
