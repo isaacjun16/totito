@@ -1,27 +1,23 @@
 # TotitoUmg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+sitio de prueba [aqui](http://totitoumg.s3-website-us-east-1.amazonaws.com/#/main)
 
-## Development server
+#Ecuación Bellman
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+Q(s, a) = Q(s, a) + α * [R + γ * max(Q(s', a')) - Q(s, a)]
+```
 
-## Code scaffolding
+Donde:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Q(s, a) es el valor de la acción a en el estado s.
+* α es la tasa de aprendizaje (en este caso learningRate).
+* R es la recompensa obtenida por la acción.
+* γ es el factor de descuento (en este caso discountFactor).
+* max(Q(s', a')) es el valor máximo de las acciones en el próximo estado s'.
 
-## Build
+En el código, se ajusta el valor de Q(prevState) usando esta ecuación basada en la recompensa obtenida en el estado actual (newState) y el valor máximo de las acciones en el próximo estado. Esto permite que la computadora aprenda y ajuste sus decisiones en función de las recompensas recibidas durante el juego.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#Otras configuraciones
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+En cada turno de la computadora, se calcula el mejor movimiento disponible. Sin embargo, para fomentar la exploración, hay una pequeña probabilidad (20%) de que la computadora elija un movimiento aleatorio en lugar del mejor movimiento. Después de cada juego, la tabla Q se actualiza utilizando la ecuación de Bellman, teniendo en cuenta la recompensa obtenida y los valores de la tabla Q para los estados siguientes.
