@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+    <table>
+        <tr>
+            <th>Estado</th>
+            <th>Valor</th>
+        </tr>
+        <tr *ngFor="let escenario of escenarios">
+            <td>{{ escenario.key }}</td>
+            <td>{{ escenario.value }}</td>
+        </tr>
+    </table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aceptar</button>
+</mat-dialog-actions>

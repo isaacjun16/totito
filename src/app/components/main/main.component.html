@@ -1,5 +1,25 @@
-<h1>Juego de Totito</h1>
-<div id="tablero">
+<mat-toolbar color="accent">
+    <span>Juego de Totito</span>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="dialogoConfiguraciones()">
+          <mat-icon>settings</mat-icon>
+          <span>Configuracion</span>
+        </button>
+        <button mat-menu-item (click)="dialogoTablaQ()">
+          <mat-icon>table</mat-icon>
+          <span>Tabla Q</span>
+        </button>
+      </mat-menu>
+</mat-toolbar>
+
+<div class="tablero">
     <div class="casilla" *ngFor="let casilla of tablero; let i = index" (click)="marcar(i)">{{casilla}}</div>
 </div>
-<button id="reiniciar" (click)="reiniciar()">Reiniciar</button>
+<br />
+<div class="reiniciar-container">
+    <button (click)="reiniciar()" mat-raised-button color="primary">Reiniciar</button>
+</div>

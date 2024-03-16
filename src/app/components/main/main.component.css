@@ -1,21 +1,27 @@
-#tablero {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 20px auto;
+    width: 200px;
 }
 
 .casilla {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  text-align: center;
-  font-size: 30px;
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 100px;
 }
 
-#reiniciar {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: 1px solid black;
-  cursor: pointer;
+.spacer {
+  flex: 1 1 auto;
+}
+
+.reiniciar-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
